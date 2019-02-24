@@ -61,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
         if ( !dash && Input.GetKeyDown(KeyCode.Space))
         {
             dash = true;
-
             //rb.AddForce(new Vector2(-1*dir, 0) * 1000, ForceMode2D.Impulse);
             rb.AddForce(new Vector2(dir,0) * 100, ForceMode2D.Impulse);
         }
