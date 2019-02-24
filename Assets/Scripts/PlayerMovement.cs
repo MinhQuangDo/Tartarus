@@ -61,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
         if ( !dash && Input.GetKeyDown(KeyCode.Space))
         {
             dash = true;
+            Debug.Log("adding force?");
             //rb.AddForce(new Vector2(-1*dir, 0) * 1000, ForceMode2D.Impulse);
             rb.AddForce(new Vector2(dir,0) * 100, ForceMode2D.Impulse);
         }
@@ -68,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
         if (!Mathf.Approximately(mvmt_X, 0)) // flip player over x axis when changing direction
         {
             dir = Mathf.Sign(mvmt_X);
-            Debug.Log(dir.ToString());
             transform.localScale = new Vector3(dir * 0.75f, 0.75f, 1);
         }
     }
