@@ -4,8 +4,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 7f;
-    public float jumpSpeed = 12.0f;
+    public float speed = 10f;
+    public float jumpSpeed = 15.0f;
 
     private CapsuleCollider2D _collider;
     private Rigidbody2D rb;
@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private double jumpCount;
     private bool dash = false;
     private float dir = 1; // -1 = left, 1 = right
+    private double dodgecount = 0;
+    private Vector2 dodgevect;
 
     void Start()
     {
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float mvmt_X = Input.GetAxis("Horizontal") * speed;
+        float mvmt_Y = Input.GetAxis("Vertical") * speed;
         //animatorObj.SetFloat("speed", Mathf.Abs(mvmt_X)); //horizontal speed for animation, can be negative so use math.abs
         rb.velocity = new Vector2(mvmt_X, rb.velocity.y);
         grounded = false;
@@ -58,15 +61,19 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
         }
 
-        if ( !dash && Input.GetKeyDown(KeyCode.Space))
+        if (canDash && !dash && Input.GetKeyDown(KeyCode.Space))
         {
             dash = true;
-            Debug.Log("adding force?");
-            //rb.AddForce(new Vector2(-1*dir, 0) * 1000, ForceMode2D.Impulse);
-            rb.AddForce(new Vector2(dir,0) * 100, ForceMode2D.Impulse);
+            dodgecount = 10; // # of frames of dash
+            dodgevect = new Vector2(mvmt_X, mvmt_Y); // current movement at frame that dash key is input at
+            dodgevect.Normalize(); // give dodgevect magnitude of 1
+        }
+        if (dodgecount != 0) {
+            dodgecount--;
+            rb.velocity = dodgevect * (jumpSpeed*1.5f);
         }
 
-        if (!Mathf.Approximately(mvmt_X, 0)) // flip player over x axis when changing direction
+        if (!Mathf.Approximately(mvmt_X, 0)) // flip player over x axis when changing direction to make them face correct direction
         {
             dir = Mathf.Sign(mvmt_X);
             transform.localScale = new Vector3(dir * 0.75f, 0.75f, 1);
