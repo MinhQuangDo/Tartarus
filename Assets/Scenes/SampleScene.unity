@@ -782,7 +782,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: de86670e3b0ba5a4194e4a0bdc47bf87, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7343104e13bc85e4bae548ee15113334, type: 3}
   m_Color: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -820,8 +820,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13674021, y: 0.0025064945}
-  m_Size: {x: 0.66216373, y: 2.494987}
+  m_Offset: {x: 0.13674021, y: 0.047149025}
+  m_Size: {x: 0.66216373, y: 2.405702}
   m_Direction: 0
 --- !u!50 &1390747788
 Rigidbody2D:
@@ -856,10 +856,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e92b44709feee74197d1c2d211adecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4.5
+  speed: 7
   jumpSpeed: 12
   canDoubleJump: 1
-  canDash: 0
+  canDash: 1
 --- !u!1001 &1434807591
 PrefabInstance:
   m_ObjectHideFlags: 0
