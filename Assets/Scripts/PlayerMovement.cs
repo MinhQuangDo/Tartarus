@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         if (!Mathf.Approximately(mvmt_X, 0)) // flip player over x axis when changing direction to make them face correct direction
         {
             dir = Mathf.Sign(mvmt_X);
-            transform.localScale = new Vector3(dir * 0.75f, 0.75f, 1);
+            transform.localScale = new Vector3(dir * 1f, 1f, 1);
         }
     }
 }
