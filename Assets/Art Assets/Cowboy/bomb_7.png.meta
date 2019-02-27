@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e87d50a8e68f54fca85378a5e9503cc0
+=======
+guid: 7239247bffd99564eab0793787b3b422
+>>>>>>> origin/steve_branch
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,7 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
     spriteID: 12a45b89a5ca645a187c5d55792fb7b4
+=======
+    spriteID: aac3f6bd31adf16448d90515458f3274
+>>>>>>> origin/steve_branch
     vertices: []
     indices: 
     edges: []
