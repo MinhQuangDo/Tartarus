@@ -14,9 +14,9 @@ public class SceneLoader : MonoBehaviour
     }
 
     // UI and buttons
-    private void ChangeScene(string sceneName )
+    private void ChangeScene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SceneName);
     }
 
     // REMEBER TO SET TO TRIGGER

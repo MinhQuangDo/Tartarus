@@ -15,12 +15,13 @@ public class GetItem : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        Debug.Log("I AM BACK"+this.gameObject.tag);
+    {   
+        // Finds the player if the target is supposed to be the player
         if (targetPlayer)
         {
             targetListener = GameObject.FindGameObjectWithTag("Player");
         }
+        // Sets the game object to true so the LevelManager will reload properly
         this.gameObject.SetActive(true);
     }
 
