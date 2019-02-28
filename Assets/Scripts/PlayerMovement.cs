@@ -4,12 +4,14 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     public float speed = 10f;
     public float jumpSpeed = 15.0f;
 
     private CapsuleCollider2D _collider;
     private Rigidbody2D rb;
     //private Animator animatorObj;
+    
 
     public bool canDoubleJump = false;
     public bool canDash = false;
@@ -50,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         Collider2D hit = Physics2D.OverlapArea(new Vector2(max.x - 0.1f, min.y - 0.1f), new Vector2(min.x + 0.1f, min.y - 0.2f)); // checks a small rectangle under the player for collisions
         if (hit)
         {
-            Debug.Log("GROUNDED");
+           
             jumpCount = 0;
             dash = false;
             grounded = true;

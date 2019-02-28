@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(Rigidbody2D))]
+
 [RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(SpriteRenderer))]
 public class GetItem : MonoBehaviour
 {
-    [SerializeField] private Sprite itemSprite;
     [SerializeField] private string sendMessage;
+    [SerializeField] private GameObject targetListener;
 
-    private Rigidbody2D rigidBody;
-    private SpriteRenderer spriteRenderer;
+
+    public bool targetPlayer = true;
 
     // Start is called before the first frame update
     void Start()
-    {
-        rigidBody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        // Use the item sprite as the sprite for the Item box
-        spriteRenderer.sprite = itemSprite;
-
+    {   
+        // Finds the player if the target is supposed to be the player
+        if (targetPlayer)
+        {
+            targetListener = GameObject.FindGameObjectWithTag("Player");
+        }
+        // Sets the game object to true so the LevelManager will reload properly
+        this.gameObject.SetActive(true);
     }
 
     // REMEMBER TO SET THE BOX COLLIDER TO TRIGGER
@@ -29,9 +30,10 @@ public class GetItem : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
-            col.gameObject.SendMessage(sendMessage);
+            targetListener.SendMessage(sendMessage);
             // Item box should destroy itself post collision
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+            //Destroy(this.gameObject);
         }
 
 
