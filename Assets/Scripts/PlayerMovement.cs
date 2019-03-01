@@ -10,12 +10,12 @@ public class PlayerMovement : MonoBehaviour
 
     private CapsuleCollider2D _collider;
     private Rigidbody2D rb;
-    //private Animator animatorObj;
-    
+    private Animator animatorObj;
+
 
     public bool canDoubleJump = false;
     public bool canDash = false;
-    
+
 
     private bool grounded;
     private double jumpCount;
@@ -36,14 +36,14 @@ public class PlayerMovement : MonoBehaviour
     {
         _collider = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        //animatorObj = GetComponent<Animator>();
+        animatorObj = GetComponent<Animator>();
     }
 
     void Update()
     {
         float mvmt_X = Input.GetAxis("Horizontal") * speed;
         float mvmt_Y = Input.GetAxis("Vertical") * speed;
-        //animatorObj.SetFloat("speed", Mathf.Abs(mvmt_X)); //horizontal speed for animation, can be negative so use math.abs
+        animatorObj.SetFloat("speed", Mathf.Abs(mvmt_X)); //horizontal speed for animation, can be negative so use math.abs
         rb.velocity = new Vector2(mvmt_X, rb.velocity.y);
         grounded = false;
 
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         Collider2D hit = Physics2D.OverlapArea(new Vector2(max.x - 0.1f, min.y - 0.1f), new Vector2(min.x + 0.1f, min.y - 0.2f)); // checks a small rectangle under the player for collisions
         if (hit)
         {
-           
+
             jumpCount = 0;
             dash = false;
             grounded = true;
