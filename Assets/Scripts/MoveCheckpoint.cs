@@ -5,6 +5,9 @@ using UnityEngine;
 public class MoveCheckpoint : MonoBehaviour
 {
     private Transform CurCheckPoint;
+    //THERE IS ONLY ONE TRUE CHECK POINT WITH THE RESPAWN TAG
+
+    //THE OTHER CHECKPOINTS MERELY MOVE THE TRUE CHECKPOINT TO THEIR LOCATION
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +22,5 @@ public class MoveCheckpoint : MonoBehaviour
             CurCheckPoint.transform.position = this.transform.position;
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

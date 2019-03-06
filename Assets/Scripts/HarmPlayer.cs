@@ -3,46 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(BoxCollider2D))]
 public class HarmPlayer : MonoBehaviour
 {
     [SerializeField] private Transform CurCheckpoint;
-    [SerializeField] private GameObject Player;
+  //  [SerializeField] public GameObject Player;
     [SerializeField] private GameObject LevelManager;
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        if(CurCheckpoint == null)
-        {
-            CurCheckpoint = GameObject.FindGameObjectWithTag("Respawn").transform;
-        }
+
         if (LevelManager == null)
         {
             LevelManager = GameObject.FindGameObjectWithTag("LevelManager");
         }
     }
 
-    // REMEMBER TO SET THE BOX COLLIDER TO TRIGGER
+    // REMEMBER TO SET THE Polygon COLLIDER TO TRIGGER
     private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "Player")
-        {
-            col.gameObject.SetActive(false);
-            // Item box should destroy itself post collision
-            StartCoroutine(RestartGame());
+        {   // Moved the set the player to false in the LevelManager
+            Debug.Log("Working");
+            LevelManager.SendMessage("Restart");
         }
-
-
-    }
-
-    private IEnumerator RestartGame()
-    {
-       yield return new WaitForSeconds(1f);
-       Player.transform.position = CurCheckpoint.position;
-       Player.SetActive(true);
-       LevelManager.SendMessage("Restart");
-
     }
 
     // Update is called once per frame
