@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(BoxCollider2D))]
+
 public class HarmPlayer : MonoBehaviour
 {
     [SerializeField] private Transform CurCheckpoint;
@@ -13,10 +13,6 @@ public class HarmPlayer : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-        if(CurCheckpoint == null)
-        {
-            CurCheckpoint = GameObject.FindGameObjectWithTag("Respawn").transform;
-        }
         if (LevelManager == null)
         {
             LevelManager = GameObject.FindGameObjectWithTag("LevelManager");
@@ -28,22 +24,18 @@ public class HarmPlayer : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
-            col.gameObject.SetActive(false);
+            PlayerMovement playerAvatar;
+            playerAvatar = Player.GetComponent<PlayerMovement>();
+            if(playerAvatar.alive) {
+                playerAvatar.Die();
+            }
             // Item box should destroy itself post collision
-            StartCoroutine(RestartGame());
+            LevelManager.SendMessage("Restart");
         }
 
-
     }
 
-    private IEnumerator RestartGame()
-    {
-       yield return new WaitForSeconds(1f);
-       Player.transform.position = CurCheckpoint.position;
-       Player.SetActive(true);
-       LevelManager.SendMessage("Restart");
 
-    }
 
     // Update is called once per frame
     void Update()
