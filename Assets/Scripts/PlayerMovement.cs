@@ -50,14 +50,21 @@ public class PlayerMovement : MonoBehaviour
         Vector2 max = _collider.bounds.max;
         Vector2 min = _collider.bounds.min;
         Collider2D hit = Physics2D.OverlapArea(new Vector2(max.x - 0.1f, min.y - 0.1f), new Vector2(min.x + 0.1f, min.y - 0.2f)); // checks a small rectangle under the player for collisions
+        MovingPlatform platform = null;
         if (hit)
         {
-
+            platform = hit.GetComponent<MovingPlatform>();
             jumpCount = 0;
             dash = false;
             grounded = true;
         }
         else { grounded = false; }
+
+        if (platform != null) {
+            transform.parent = platform.transform;
+        } else {
+            transform.parent = null;
+        }
 
         if (canDoubleJump)
         {
