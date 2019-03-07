@@ -9,13 +9,17 @@ public class GetItem : MonoBehaviour
 {
     [SerializeField] private string sendMessage;
     [SerializeField] private GameObject targetListener;
+    [SerializeField] private GameObject InventoryManager;
 
+    public GameObject inventoryObject = null; //Id equals -1 while not in the inventory system
 
     public bool targetPlayer = true;
+    public bool uiItem = false;
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {
+        InventoryManager = GameObject.FindGameObjectWithTag("Inventory");
         // Finds the player if the target is supposed to be the player
         if (targetPlayer)
         {
@@ -23,6 +27,8 @@ public class GetItem : MonoBehaviour
         }
         // Sets the game object to true so the LevelManager will reload properly
         this.gameObject.SetActive(true);
+        InventoryManager.GetComponent<Inventory>().removeItem(inventoryObject);
+        inventoryObject = null;
     }
 
     // REMEMBER TO SET THE BOX COLLIDER TO TRIGGER
@@ -32,8 +38,11 @@ public class GetItem : MonoBehaviour
         {
             targetListener.SendMessage(sendMessage);
             // Item box should destroy itself post collision
+            if (uiItem)
+            {
+                inventoryObject = InventoryManager.GetComponent<Inventory>().AddItem( GetComponent<SpriteRenderer>() );
+            }
             this.gameObject.SetActive(false);
-            //Destroy(this.gameObject);
         }
 
 
