@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/TestMovingPlatform.unity
+- path: C:/Users/Steven/Desktop/Tatarus-MovingPlatformTest/Tatarus-MovingPlatformTest/Assets/Scenes/TestMovingPlatform.unity
   isLoaded: 1
   isActive: 1
