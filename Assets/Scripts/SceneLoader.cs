@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public string SceneName;
     public string CurrentSceneName;
     public string NextSceneName;
     public string MainMenuName;
@@ -40,7 +39,7 @@ public class SceneLoader : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(SceneName);
+            SceneManager.LoadScene(NextSceneName);
         }
     }
 
