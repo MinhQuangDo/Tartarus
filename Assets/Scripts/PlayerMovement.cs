@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Don't move if the player is dead
-        if (alive) { 
+        if (alive) {
             float mvmt_X = Input.GetAxis("Horizontal") * speed;
             float mvmt_Y = Input.GetAxis("Vertical") * speed;
             animatorObj.SetFloat("speed", Mathf.Abs(mvmt_X)); //horizontal speed for animation, can be negative so use math.abs
@@ -51,15 +51,22 @@ public class PlayerMovement : MonoBehaviour
 
             Vector2 max = _collider.bounds.max;
             Vector2 min = _collider.bounds.min;
+            MovingPlatform platform = null;
             Collider2D hit = Physics2D.OverlapArea(new Vector2(max.x - 0.1f, min.y - 0.1f), new Vector2(min.x + 0.1f, min.y - 0.2f)); // checks a small rectangle under the player for collisions
             if (hit)
             {
-
+                platform = hit.GetComponent<MovingPlatform>();
                 jumpCount = 0;
                 dash = false;
                 grounded = true;
             }
             else { grounded = false; }
+
+            if (platform != null) {
+                transform.parent = platform.transform;
+            } else {
+                transform.parent = null;
+            }
 
             if (canDoubleJump)
             {
