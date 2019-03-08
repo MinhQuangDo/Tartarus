@@ -696,14 +696,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1649619886}
-        m_MethodName: SendMessage
-        m_Mode: 5
+        m_MethodName: NextLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ChangeScene
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -848,6 +848,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
+        type: 3}
+      propertyPath: SceneName
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
+        type: 3}
+      propertyPath: CurrentSceneName
+      value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
+        type: 3}
+      propertyPath: NextSceneName
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
+        type: 3}
+      propertyPath: MainMenuName
+      value: Main Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 2118545264873717567, guid: 6e7ec83f72e164158956a5bd2cfec5df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -902,11 +922,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
-        type: 3}
-      propertyPath: SceneName
-      value: Level 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e7ec83f72e164158956a5bd2cfec5df, type: 3}
