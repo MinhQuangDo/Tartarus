@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public string SceneName;
+    public string CurrentSceneName;
+    public string NextSceneName;
+    public string MainMenuName;
 
     // Start is called before the first frame update
     void Start()
@@ -14,9 +17,21 @@ public class SceneLoader : MonoBehaviour
     }
 
     // UI and buttons
-    private void ChangeScene()
+    public void MainMenu()
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene(MainMenuName);
+    }
+
+    // UI and buttons
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(NextSceneName);
+    }
+
+    // UI and buttons
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(CurrentSceneName);
     }
 
     // REMEBER TO SET TO TRIGGER

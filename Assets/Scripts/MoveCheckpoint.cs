@@ -6,6 +6,10 @@ public class MoveCheckpoint : MonoBehaviour
 {
     private Transform CurCheckPoint;
 
+    [SerializeField] private SpriteRenderer flagColor;
+
+    public Color flashColor = Color.red;
+
     // Start is called before the first frame update
     void Start()
     { 
@@ -16,8 +20,27 @@ public class MoveCheckpoint : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            if(CurCheckPoint.transform.position == this.transform.position)
+            {
+            //    return;
+            }
             CurCheckPoint.transform.position = this.transform.position;
+            StartCoroutine(FlashColor());
         }
+    }
+
+    IEnumerator FlashColor()
+    {
+        yield return new WaitForSeconds(0.1f);
+        flagColor.color = flashColor;
+        yield return new WaitForSeconds(0.5f);
+        flagColor.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+        flagColor.color = flashColor;
+        yield return new WaitForSeconds(0.5f);
+        flagColor.color = Color.white;
+
+
     }
     // Update is called once per frame
     void Update()

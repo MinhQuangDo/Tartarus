@@ -22,7 +22,6 @@ public class LevelManager : MonoBehaviour
     private IEnumerator RestartGame()
     {
         yield return new WaitForSeconds(1f);
-        Debug.Log("Player is back");
         Player.transform.position = CurCheckpoint.position;
         Player.GetComponent<PlayerMovement>().Respawn();
 

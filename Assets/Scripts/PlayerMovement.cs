@@ -102,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Set alive to false
         alive = false;
-        Debug.Log("Oof");
         rb.velocity = Vector2.zero;
         transform.Rotate(new Vector3(0, 0, 90), Space.Self);
         // Velicity to zero
