@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b11fb5ff8981b7248a79ad0320055558, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5f5b67365d636d40968cb8b0c6b4212, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,8 +95,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69001f694a08f4df99080613fb72ee31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  Animations:
+  - {fileID: 9100000, guid: 274a32a8bded4d048a8040ec91aa0a06, type: 2}
+  - {fileID: 9100000, guid: 4ed5109a9c88dcc4baaf3c79dd24e014, type: 2}
+  - {fileID: 9100000, guid: 589a17a9e6819d9479c552294641c0e8, type: 2}
+  PlayerSprites:
+  - {fileID: 21300000, guid: c5f5b67365d636d40968cb8b0c6b4212, type: 3}
+  - {fileID: 21300000, guid: 4aa4713a99fdf994eb1d3f8642ea1a9b, type: 3}
+  - {fileID: 21300000, guid: 47765178eb5304a8c871d7c5b4bf168b, type: 3}
+  speed: 8
   jumpSpeed: 15
+  alive: 1
   canDoubleJump: 0
   canDash: 0
 --- !u!50 &5675999178172867824
@@ -146,7 +155,7 @@ Animator:
   m_GameObject: {fileID: 5675999178172867836}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 56f8423d84b804a55b8fc68def051836, type: 2}
+  m_Controller: {fileID: 9100000, guid: 274a32a8bded4d048a8040ec91aa0a06, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

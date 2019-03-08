@@ -4,6 +4,10 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private RuntimeAnimatorController[] Animations;
+    // 0 is the base, 1 is with jetpack, 2 is with boots
+    [SerializeField] private Sprite[] PlayerSprites;
+    // 0 is the base, 1 is with jetpack, 2 is with boots
 
     public float speed = 10f;
     public float jumpSpeed = 15.0f;
@@ -24,12 +28,18 @@ public class PlayerMovement : MonoBehaviour
     private double dodgecount = 0;
     private Vector2 dodgevect;
 
-    void applyRocket(){
-      canDoubleJump = true;
+    void applyRocket()
+    {
+        canDoubleJump = true;
+        GetComponent<Animator>().runtimeAnimatorController = Animations[1];
+        GetComponent<SpriteRenderer>().sprite = PlayerSprites[1];
     }
 
-    void applyBoots(){
-      canDash = true;
+    void applyBoots()
+    {
+        canDash = true;
+        GetComponent<Animator>().runtimeAnimatorController = Animations[2];
+        GetComponent<SpriteRenderer>().sprite = PlayerSprites[2];
     }
 
     void Start()
@@ -37,6 +47,14 @@ public class PlayerMovement : MonoBehaviour
         _collider = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         animatorObj = GetComponent<Animator>();
+        if (canDoubleJump)
+        {
+            applyRocket();
+        }
+        if (canDash)
+        {
+            applyBoots();
+        }
     }
 
     void Update()
@@ -59,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
                 jumpCount = 0;
                 dash = false;
                 grounded = true;
+                animatorObj.SetBool("jump", false);
             }
             else { grounded = false; }
 
@@ -75,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
                     rb.velocity = new Vector2(rb.velocity.x, 0); // cancel out previous jump velocity to avoid multiplying forces
                     rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
                     jumpCount += 1;
+                    animatorObj.SetBool("jump", true);
                 }
             }
             else if (grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
