@@ -12,9 +12,35 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject findScene = GameObject.FindGameObjectWithTag("LoadScene");
+        if(CurrentSceneName == null)
+        {
+            if(findScene != null)
+            {
+                CurrentSceneName = findScene.GetComponent<SceneLoader>().CurrentSceneName;
+            }
+            else
+            {
+                Debug.Log(this.gameObject + " has no Current Scene Name variable");
+            }
+        }
+        if (NextSceneName == null)
+        {
+            if (findScene != null)
+            {
+                NextSceneName = findScene.GetComponent<SceneLoader>().NextSceneName;
+            }
+            else
+            {
+                Debug.Log(this.gameObject + " has no Next Scene Name variable");
+            }
+        }
+        if (MainMenuName == null)
+        {
+            Debug.Log(this.gameObject + " has no Main Menu Name variable");
+        }
     }
-
+    
     // UI and buttons
     public void MainMenu()
     {

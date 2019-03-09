@@ -35,6 +35,17 @@ public class Inventory : MonoBehaviour
         toDelete.SetActive(false);
     }
 
+    public void clearItems()
+    {
+        foreach( GameObject obj in Items)
+        {
+            obj.SetActive(false);
+            
+        }
+        Items.Clear();
+        Debug.Log("Clearing Items");
+    }
+
     // Update is called once per frame
     void Update()
     {

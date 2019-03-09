@@ -7602,7 +7602,7 @@ GameObject:
   - component: {fileID: 1736353166}
   m_Layer: 0
   m_Name: Scene Changer
-  m_TagString: Untagged
+  m_TagString: LoadScene
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
