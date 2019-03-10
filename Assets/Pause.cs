@@ -5,12 +5,16 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private bool Paused;
+    [SerializeField] private bool GameOver;
     [SerializeField] private GameObject pauseGUI;
+    [SerializeField] private GameObject restartGUI;
     // Start is called before the first frame update
     void Start()
     {
         Paused = false;
+        GameOver = false;
         pauseGUI.SetActive(false);
+        restartGUI.SetActive(false);
         Time.timeScale = 1;
     }
 
@@ -19,14 +23,14 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!Paused)
+            if (!Paused && !GameOver)
             {
                 Paused = true;
                 pauseGUI.SetActive(true);
                 Time.timeScale = 0;
 
             }
-            else
+            else if(Paused && !GameOver)
             {
                 Paused = false;
                 pauseGUI.SetActive(false);
@@ -40,5 +44,13 @@ public class Pause : MonoBehaviour
         Paused = false;
         pauseGUI.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void RestartLevelGUI()
+    {
+        GameOver = true;
+        pauseGUI.SetActive(false);
+        restartGUI.SetActive(true);
+        Time.timeScale = 0;
     }
 }
