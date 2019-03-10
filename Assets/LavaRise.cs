@@ -34,16 +34,17 @@ public class LavaRise : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (curCollider.bounds.max.y <= Ceiling.transform.position.y)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + UpSpeed, transform.position.z);
-        }
-        else
+        if ((curCollider.bounds.max.y >= Ceiling.transform.position.y) && (curCollider.bounds.max.y >= Player.position.y))
         {
             // Game Over?
             // Activate the Restart Game GUI from the Camera]
             Camera.SendMessage("RestartLevelGUI");
             Debug.Log("GAME OVER MAN, GAME OVER!");
+           
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + UpSpeed, transform.position.z);
         }
     }
 }

@@ -7,13 +7,13 @@ public class SceneLoader : MonoBehaviour
 {
     public string CurrentSceneName;
     public string NextSceneName;
-    public string MainMenuName;
+    public string MainMenuName = "Main Menu";
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject findScene = GameObject.FindGameObjectWithTag("LoadScene");
-        if(CurrentSceneName == null)
+        if(CurrentSceneName == "")
         {
             if(findScene != null)
             {
@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour
                 Debug.Log(this.gameObject + " has no Current Scene Name variable");
             }
         }
-        if (NextSceneName == null)
+        if (NextSceneName == "")
         {
             if (findScene != null)
             {
@@ -35,7 +35,7 @@ public class SceneLoader : MonoBehaviour
                 Debug.Log(this.gameObject + " has no Next Scene Name variable");
             }
         }
-        if (MainMenuName == null)
+        if (MainMenuName == "")
         {
             Debug.Log(this.gameObject + " has no Main Menu Name variable");
         }
