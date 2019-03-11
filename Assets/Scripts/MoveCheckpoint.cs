@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class MoveCheckpoint : MonoBehaviour
 {
     private Transform CurCheckPoint;
@@ -20,10 +21,6 @@ public class MoveCheckpoint : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            if(CurCheckPoint.transform.position == this.transform.position)
-            {
-            //    return;
-            }
             CurCheckPoint.transform.position = this.transform.position;
             StartCoroutine(FlashColor());
         }
@@ -31,6 +28,7 @@ public class MoveCheckpoint : MonoBehaviour
 
     IEnumerator FlashColor()
     {
+        GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.1f);
         flagColor.color = flashColor;
         yield return new WaitForSeconds(0.5f);

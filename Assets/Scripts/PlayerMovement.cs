@@ -73,11 +73,18 @@ public class PlayerMovement : MonoBehaviour
             Collider2D hit = Physics2D.OverlapArea(new Vector2(max.x - 0.1f, min.y - 0.1f), new Vector2(min.x + 0.1f, min.y - 0.2f)); // checks a small rectangle under the player for collisions
             if (hit)
             {
-                platform = hit.GetComponent<MovingPlatform>();
-                jumpCount = 0;
-                dash = false;
-                grounded = true;
-                animatorObj.SetBool("jump", false);
+                if (!hit.isTrigger) // We should not be grounded underneath trigger colliders
+                {
+                    platform = hit.GetComponent<MovingPlatform>();
+                    jumpCount = 0;
+                    dash = false;
+                    grounded = true;
+                    animatorObj.SetBool("jump", false);
+                }
+                else
+                {
+                    grounded = false;
+                }
             }
             else { grounded = false; }
 

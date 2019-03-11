@@ -74,5 +74,5 @@ MonoBehaviour:
   targetListener: {fileID: 0}
   InventoryManager: {fileID: 0}
   inventoryObject: {fileID: 0}
-  targetPlayer: 0
+  targetPlayer: 1
   uiItem: 0
