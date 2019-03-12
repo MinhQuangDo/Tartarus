@@ -32,7 +32,7 @@ public class MovingPlatform : MonoBehaviour {
   {
   	//Vector2 direction = (towards - pos).normalized;
   	//objectRigidBody.MovePosition(objectRigidBody.position + direction * 1f * Time.deltaTime);
-  	transform.position = Vector3.MoveTowards(pos, towards, .1f);
+  	transform.position = Vector3.MoveTowards(pos, towards, .05f);
   }
 
     void Switch()
