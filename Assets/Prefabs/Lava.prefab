@@ -112,6 +112,8 @@ MonoBehaviour:
   curCollider: {fileID: 1156568556330409918}
   Player: {fileID: 0}
   Camera: {fileID: 0}
+  startColor: {r: 0.3773585, g: 0.033819854, b: 0.047552213, a: 1}
+  finishColor: {r: 0.41509432, g: 0.3072518, b: 0.06852971, a: 1}
   Ceiling: {fileID: 0}
   UpSpeed: 0
 --- !u!61 &1156568556330409918

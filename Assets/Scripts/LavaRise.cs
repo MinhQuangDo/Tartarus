@@ -8,6 +8,9 @@ public class LavaRise : MonoBehaviour
     [SerializeField] private Transform Player;
     [SerializeField] private GameObject Camera;
 
+    [SerializeField] private Color startColor;
+    [SerializeField] private Color finishColor;
+
     public Transform Ceiling;
     public float UpSpeed = 10;
     // Start is called before the first frame update
@@ -35,6 +38,7 @@ public class LavaRise : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponent<SpriteRenderer>().color = Color.Lerp(startColor, finishColor, Mathf.PingPong(Time.time, 1));
         if ((curCollider.bounds.max.y >= Ceiling.transform.position.y) && (curCollider.bounds.max.y >= Player.position.y))
         {
             // Game Over?
