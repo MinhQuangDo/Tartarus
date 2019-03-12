@@ -20,6 +20,7 @@ public class LavaRise : MonoBehaviour
         {
             Player = foundPlayer.transform;
         }
+        Ceiling = GameObject.FindGameObjectWithTag("Respawn").transform;
         GameObject foundCamera = GameObject.FindGameObjectWithTag("MainCamera");
         if (foundPlayer != null)
         {
