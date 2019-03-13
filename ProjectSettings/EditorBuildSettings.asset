@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ReverseTreasureLevel.unity
     guid: c26af6bbc85704be69b1d66dc42fb2bf
+  - enabled: 1
+    path: Assets/Scenes/Level2_back.unity
+    guid: e9d19b258fe9f4dee916469197e4c904
+  - enabled: 1
+    path: Assets/Scenes/Level1_back.unity
+    guid: bc09e71ac5dde47c69d12ba295e8488d
   m_configObjects: {}
