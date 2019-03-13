@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - LevelManager
+  - MovingPlatform
+  - LoadScene
+  - Dest
+  - Inventory
+  - Lava
   layers:
   - Default
   - TransparentFX
