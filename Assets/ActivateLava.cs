@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ActivateLava : MonoBehaviour
 {
-    private GameObject lava;
-    private LavaRise lavaScript;
+    public GameObject lava;
+    public LavaRise lavaScript;
 
     public float UpSpeedVar;
 
@@ -13,11 +13,10 @@ public class ActivateLava : MonoBehaviour
     {
         lava = GameObject.FindGameObjectWithTag("Lava");
         lavaScript = lava.GetComponent<LavaRise>();
-        lavaScript.UpSpeed = 0;
-
+        lavaScript.UpSpeed = 0f;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {

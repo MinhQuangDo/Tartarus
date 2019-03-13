@@ -248,6 +248,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1156568556330409913, guid: 5ff24752d393f457d90906de6717828e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lava
+      objectReference: {fileID: 0}
     - target: {fileID: 1156568556330409890, guid: 5ff24752d393f457d90906de6717828e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -618,7 +623,7 @@ PrefabInstance:
     - target: {fileID: 168130405882155044, guid: 3d6346e7cf5784240a88bc0e4e4f54f5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 168130406298204335, guid: 3d6346e7cf5784240a88bc0e4e4f54f5,
         type: 3}
@@ -85557,12 +85562,12 @@ PrefabInstance:
     - target: {fileID: 5675999178172867826, guid: 85c710563e7ae4adfa507518145429aa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47.5
+      value: 70.5
       objectReference: {fileID: 0}
     - target: {fileID: 5675999178172867826, guid: 85c710563e7ae4adfa507518145429aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7
+      value: -26.5
       objectReference: {fileID: 0}
     - target: {fileID: 5675999178172867826, guid: 85c710563e7ae4adfa507518145429aa,
         type: 3}
@@ -86683,4 +86688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fcf28e436934521a075e7e6677a62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpSpeedVar: 0
+  lava: {fileID: 0}
+  lavaScript: {fileID: 0}
+  UpSpeedVar: 0.01
