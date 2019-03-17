@@ -27,7 +27,7 @@ public class FallingObject : MonoBehaviour
         if (col.gameObject.tag == "Wall")
         {
 
-            Destroy(this.gameObject, 0.1f);
+            Destroy(this.gameObject, 0.02f);
         }
 
 

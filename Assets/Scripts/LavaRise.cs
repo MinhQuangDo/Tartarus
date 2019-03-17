@@ -12,6 +12,7 @@ public class LavaRise : MonoBehaviour
     [SerializeField] private Color finishColor;
 
     public Transform Ceiling;
+    public bool endGame = true;
     public float UpSpeed = 10;
     // Start is called before the first frame update
 
@@ -39,7 +40,7 @@ public class LavaRise : MonoBehaviour
     void Update()
     {
         GetComponent<SpriteRenderer>().color = Color.Lerp(startColor, finishColor, Mathf.PingPong(Time.time, 1));
-        if ((curCollider.bounds.max.y >= Ceiling.transform.position.y) && (curCollider.bounds.max.y >= Player.position.y))
+        if (endGame && (curCollider.bounds.max.y >= Ceiling.transform.position.y) && (curCollider.bounds.max.y >= Player.position.y))
         {
             // Game Over?
             // Activate the Restart Game GUI from the Camera]
