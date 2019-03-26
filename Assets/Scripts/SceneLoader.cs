@@ -44,6 +44,11 @@ public class SceneLoader : MonoBehaviour
     // UI and buttons
     public void MainMenu()
     {
+        GameObject obj = GameObject.FindGameObjectWithTag("Music");
+        if(obj != null)
+        {
+            obj.GetComponent<MusicBox>().playTitle();
+        }
         SceneManager.LoadScene(MainMenuName);
     }
 
