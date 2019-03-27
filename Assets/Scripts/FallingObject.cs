@@ -8,11 +8,16 @@ public class FallingObject : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
 
+    private GameObject selfObject;
+    private Vector3 savedPosition;
+
     public float waitTime = 30f;
 
     // Start is called before the first frame update
     void Start()
     {
+        savedPosition = this.transform.position;
+        selfObject = this.gameObject;
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.gravityScale = 0;
         //Don't fall until after the coroutine is done
@@ -26,6 +31,7 @@ public class FallingObject : MonoBehaviour
     {
         if (col.gameObject.tag == "Wall")
         {
+            Instantiate(selfObject, savedPosition, this.transform.rotation);
 
             Destroy(this.gameObject, 0.02f);
         }
@@ -34,14 +40,12 @@ public class FallingObject : MonoBehaviour
     }
 
     // Wait an amount of time
-    // Spawn another object in the same location
+    // Save the current position to spawn in a new one once this one disappears
     // Turn on the gravity
     public IEnumerator SpawnAndDrop()
     {
-        FallingObject newObject;
         yield return new WaitForSeconds(waitTime);
-        newObject = Instantiate(this, this.transform.position, this.transform.rotation);
-        HarmPlayer myHarmPlayer = GetComponent<HarmPlayer>();
+        
         //     if(myHarmPlayer!= null ){
         //        newObject.GetComponent<HarmPlayer>().Player = myHarmPlayer.Player;
         //   }

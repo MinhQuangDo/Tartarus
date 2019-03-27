@@ -37,6 +37,11 @@ public class DialogueCaveCutscene : MonoBehaviour
     {
         dBox.SetActive(true);
         sentences.Clear();
+        GameObject obj = GameObject.FindGameObjectWithTag("Music");
+        if (obj != null)
+        {
+            obj.GetComponent<MusicBox>().SwitchClip(2);
+        }
 
         foreach (string sentence in dialogue.sentences)
         {
@@ -52,6 +57,11 @@ public class DialogueCaveCutscene : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
+            GameObject obj = GameObject.FindGameObjectWithTag("Music");
+            if (obj != null)
+            {
+                obj.GetComponent<MusicBox>().SwitchClip(3);
+            }
             return;
         }
         string sentence = sentences.Dequeue();
@@ -74,11 +84,7 @@ public class DialogueCaveCutscene : MonoBehaviour
             intropt2 = true;
         }
         dBox.SetActive(false);
-        GameObject obj = GameObject.FindGameObjectWithTag("Music");
-        if (obj != null)
-        {
-            obj.GetComponent<MusicBox>().playReverse();
-        }
+        
     }
 
     public IEnumerator Wait(int length)
