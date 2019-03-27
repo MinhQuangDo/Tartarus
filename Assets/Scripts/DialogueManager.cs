@@ -15,6 +15,9 @@ public class DialogueManager : MonoBehaviour
     private Animator _anim2;
     private bool intro;
     private bool intropt2;
+
+    public GameObject secondButton;
+    public GameObject firstButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,8 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         int length = sentences.Count;
-        StartCoroutine(Wait(length));
+        DisplayNextSentence();
+      //  StartCoroutine(Wait(length));
     }
 
     public void DisplayNextSentence()
@@ -68,6 +72,9 @@ public class DialogueManager : MonoBehaviour
             intropt2 = true;
         }
         dBox.SetActive(false);
+        firstButton.SetActive(false);
+        secondButton.SetActive(true);
+
     }
 
     public IEnumerator Wait(int length)

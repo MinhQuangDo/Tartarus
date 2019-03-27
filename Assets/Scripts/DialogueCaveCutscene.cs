@@ -43,7 +43,8 @@ public class DialogueCaveCutscene : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         int length = sentences.Count;
-        StartCoroutine(Wait(length));
+        // StartCoroutine(Wait(length));
+        DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
@@ -73,7 +74,11 @@ public class DialogueCaveCutscene : MonoBehaviour
             intropt2 = true;
         }
         dBox.SetActive(false);
-        
+        GameObject obj = GameObject.FindGameObjectWithTag("Music");
+        if (obj != null)
+        {
+            obj.GetComponent<MusicBox>().playReverse();
+        }
     }
 
     public IEnumerator Wait(int length)

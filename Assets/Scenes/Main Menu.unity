@@ -1157,7 +1157,7 @@ PrefabInstance:
     - target: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
         type: 3}
       propertyPath: NextSceneName
-      value: Level 1
+      value: Intro Cutscene
       objectReference: {fileID: 0}
     - target: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
         type: 3}
@@ -1337,7 +1337,7 @@ PrefabInstance:
     - target: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
         type: 3}
       propertyPath: NextSceneName
-      value: Level1_easy
+      value: Intro Cutscene_easy
       objectReference: {fileID: 0}
     - target: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
         type: 3}

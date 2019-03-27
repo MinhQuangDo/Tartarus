@@ -68,6 +68,7 @@ public class SceneLoader : MonoBehaviour
     //Door for player and other colliders
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision);
         if(collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(NextSceneName);
