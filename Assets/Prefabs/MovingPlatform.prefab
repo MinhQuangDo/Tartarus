@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   departure: {fileID: 0}
+  speed: 0.04
 --- !u!1 &7428270151748360101
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,8 @@ public class MovingPlatform : MonoBehaviour {
   public GameObject destination;
   public GameObject departure;
   float distance;
-  bool reached = false;
+    [SerializeField] private float speed = 0.05f;
+    bool reached = false;
 
   public void Update()
   {
@@ -32,7 +33,7 @@ public class MovingPlatform : MonoBehaviour {
   {
   	//Vector2 direction = (towards - pos).normalized;
   	//objectRigidBody.MovePosition(objectRigidBody.position + direction * 1f * Time.deltaTime);
-  	transform.position = Vector3.MoveTowards(pos, towards, .05f);
+  	transform.position = Vector3.MoveTowards(pos, towards, speed);
   }
 
     void Switch()
