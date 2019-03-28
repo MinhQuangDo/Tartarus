@@ -2738,7 +2738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentSceneName: Level2_back_easy
-  NextSceneName: Level1_back_easy
+  NextSceneName: Level 1 back new easy
   MainMenuName: Main Menu
 --- !u!61 &769840350
 BoxCollider2D:
@@ -81823,16 +81823,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1156568556330409916, guid: 5ff24752d393f457d90906de6717828e,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1170435763}
     - target: {fileID: 1156568556330409919, guid: 5ff24752d393f457d90906de6717828e,
         type: 3}
       propertyPath: UpSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1156568556330409916, guid: 5ff24752d393f457d90906de6717828e,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1170435763}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff24752d393f457d90906de6717828e, type: 3}
 --- !u!1 &1293679282
@@ -86633,20 +86633,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5335587546447822483, guid: 3d6346e7cf5784240a88bc0e4e4f54f5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 168130405882155044, guid: 3d6346e7cf5784240a88bc0e4e4f54f5,
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 168130406298204335, guid: 3d6346e7cf5784240a88bc0e4e4f54f5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 168130405527342497, guid: 3d6346e7cf5784240a88bc0e4e4f54f5,
         type: 3}
@@ -86680,6 +86670,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 32d1d2ae576594aa88f3aee6527c360e,
         type: 3}
+    - target: {fileID: 168130406298204335, guid: 3d6346e7cf5784240a88bc0e4e4f54f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5335587546447822483, guid: 3d6346e7cf5784240a88bc0e4e4f54f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d6346e7cf5784240a88bc0e4e4f54f5, type: 3}
 --- !u!1 &2111294549
