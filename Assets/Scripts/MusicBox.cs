@@ -6,7 +6,6 @@ public class MusicBox : MonoBehaviour
 {
     [SerializeField] private AudioClip[] levelMusic;
     private int curIndex = 0;
-    static public bool alreadySpawned = false;
     /// <summary>
     /// Do not delete the music box
     ///  
@@ -16,18 +15,26 @@ public class MusicBox : MonoBehaviour
 
     public void Awake()
     {
-        if (alreadySpawned)
+
+            MusicBox[] ArrayOfBoxes = (MusicBox[])FindObjectsOfType(typeof(MusicBox));
+        Debug.Log(ArrayOfBoxes.Length);
+            if(ArrayOfBoxes.Length > 1)
         {
-            DestroyImmediate(gameObject);
+            int i;
+            for (i = 0; i < ArrayOfBoxes.Length; i++)
+            {
+                if( ArrayOfBoxes[i].gameObject != this.gameObject)
+                {
+                    DestroyImmediate(ArrayOfBoxes[i].gameObject);
+                }
+            }
         }
-        else
-        {
-            alreadySpawned = true;
             DontDestroyOnLoad(transform.gameObject);
-        }
+            
+            }
         
 
-    }
+
 
     public void playLevel()
     {

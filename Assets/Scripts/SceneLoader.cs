@@ -44,6 +44,7 @@ public class SceneLoader : MonoBehaviour
     // UI and buttons
     public void MainMenu()
     {
+        Time.timeScale = 1;
         GameObject obj = GameObject.FindGameObjectWithTag("Music");
         if(obj != null)
         {
@@ -55,12 +56,14 @@ public class SceneLoader : MonoBehaviour
     // UI and buttons
     public void NextLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(NextSceneName);
     }
 
     // UI and buttons
     public void RestartLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(CurrentSceneName);
     }
 
@@ -68,6 +71,7 @@ public class SceneLoader : MonoBehaviour
     //Door for player and other colliders
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Time.timeScale = 1;
         Debug.Log(collision);
         if(collision.gameObject.tag == "Player")
         {

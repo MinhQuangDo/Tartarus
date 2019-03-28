@@ -27,6 +27,7 @@ public class DialogueManager : MonoBehaviour
         dBox.SetActive(false);
         intro = true;
         intropt2 = false;
+        _anim2.SetBool("start", true);
     }
 
     public void StartDialogue(Dialogue dialogue)

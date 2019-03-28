@@ -10,6 +10,7 @@ TagManager:
   - Dest
   - Inventory
   - Lava
+  - Music
   layers:
   - Default
   - TransparentFX

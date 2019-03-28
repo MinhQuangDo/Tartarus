@@ -80,4 +80,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 5b1b09a9387a875429a5e0c6de988305
+  - enabled: 1
+    path: Assets/Scenes/Joke Credit.unity
+    guid: 2db9b9e0f698e4b0e94e05c18516298f
   m_configObjects: {}

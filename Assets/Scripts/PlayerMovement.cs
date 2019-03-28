@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController[] Animations;
     // 0 is the base, 1 is with jetpack, 2 is with boots
     [SerializeField] private Sprite[] PlayerSprites;
+    private AudioSource deathNoise;
     // 0 is the base, 1 is with jetpack, 2 is with boots
 
     public float speed = 10f;
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        deathNoise = GetComponent<AudioSource>();
         _collider = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         animatorObj = GetComponent<Animator>();
@@ -138,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
         alive = false;
         rb.velocity = Vector2.zero;
         transform.Rotate(new Vector3(0, 0, 90), Space.Self);
+        deathNoise.Play();
         // Velicity to zero
     }
 
