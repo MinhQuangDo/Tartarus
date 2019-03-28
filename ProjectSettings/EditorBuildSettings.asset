@@ -74,4 +74,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TreasureLevel_easy.unity
     guid: 8a5b74de4501f43f6ac5b4fa4651ea29
+  - enabled: 1
+    path: Assets/Scenes/SplashScene.unity
+    guid: 0f528382ee3c1ba46ac0bde19abd2351
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 5b1b09a9387a875429a5e0c6de988305
   m_configObjects: {}
