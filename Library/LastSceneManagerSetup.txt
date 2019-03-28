@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ReverseTreasureLevel.unity
+- path: Assets/Scenes/Level2_back.unity
   isLoaded: 1
   isActive: 1
