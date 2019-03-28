@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Level2_back.unity
+- path: Assets/Scenes/TreasureCutscene.unity
   isLoaded: 1
   isActive: 1

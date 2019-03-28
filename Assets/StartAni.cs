@@ -19,7 +19,12 @@ public class StartAni : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        _anim.Play(ScriptName, -1, 0f);
+    
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Hit");
+        _anim.Play(ScriptName);
         _anim.SetBool("start", true);
     }
 }
