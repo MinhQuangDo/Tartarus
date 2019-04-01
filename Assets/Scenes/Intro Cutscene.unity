@@ -481,7 +481,7 @@ MonoBehaviour:
     sentences:
     - 'You: I''ve been starving for days!'
     - 'You: I first came to this island in hopes for treasure.'
-    - 'You: But now I''m at my ropes end!'
+    - 'You: But now I''m at my wit''s end!'
     - 'You: I wonder where I can find food...'
 --- !u!1 &283880638
 GameObject:
@@ -1104,10 +1104,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - Was that a helicopter?
-    - The only reason a helicopter would be here is for TREASURE.
-    - I'm getting that treasure if it's the last thing I do!
-    - I'll steal some food while I'm at it!
+    - 'YOU: Was that a L.O.R.E helicopter?'
+    - 'YOU: The only reason L.O.R.E would be here is for TREASURE.'
+    - 'YOU: I''m getting that treasure if it''s the last thing I do!'
+    - 'YOU: I''ll steal some food while I''m at it!'
 --- !u!4 &548763402
 Transform:
   m_ObjectHideFlags: 0

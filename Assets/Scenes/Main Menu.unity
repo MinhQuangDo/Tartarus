@@ -292,6 +292,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 20e993f49bb81c74682a10073c017800, type: 3}
   - {fileID: 8300000, guid: 2ab4acefb782a334bbc649e735e817ff, type: 3}
   - {fileID: 8300000, guid: eae674cdb8ce3164cb9488d7cfcf0d4b, type: 3}
+  isRunning: 0
 --- !u!82 &635679865
 AudioSource:
   m_ObjectHideFlags: 0
@@ -863,6 +864,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1836006142}
+        m_MethodName: restartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1251586620
@@ -902,18 +914,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251586617}
   m_CullTransparentMesh: 0
---- !u!114 &1649619886 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
-    type: 3}
-  m_PrefabInstance: {fileID: 2118545265440918674}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378a5b5d9ca694ae0bd33ec72ebc38a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1758847064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1649619886}
+      - m_Target: {fileID: 2118545265440918675}
         m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
@@ -1094,6 +1094,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1836006142}
+        m_MethodName: restartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1759373270
@@ -1402,3 +1413,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e7ec83f72e164158956a5bd2cfec5df, type: 3}
+--- !u!114 &2118545265440918675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2118545264873717564, guid: 6e7ec83f72e164158956a5bd2cfec5df,
+    type: 3}
+  m_PrefabInstance: {fileID: 2118545265440918674}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378a5b5d9ca694ae0bd33ec72ebc38a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

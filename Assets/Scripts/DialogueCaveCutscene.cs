@@ -41,6 +41,8 @@ public class DialogueCaveCutscene : MonoBehaviour
         if (obj != null)
         {
             obj.GetComponent<MusicBox>().SwitchClip(2);
+
+            obj.GetComponent<MusicBox>().pauseTimer();
         }
 
         foreach (string sentence in dialogue.sentences)

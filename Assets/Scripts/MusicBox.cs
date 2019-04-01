@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 using UnityEngine;
 
 public class MusicBox : MonoBehaviour
 {
     [SerializeField] private AudioClip[] levelMusic;
     private int curIndex = 0;
+    public Stopwatch timer;
+    public bool isRunning;
+
     /// <summary>
     /// Do not delete the music box
     ///  
@@ -29,11 +34,30 @@ public class MusicBox : MonoBehaviour
                 }
             }
         }
-            DontDestroyOnLoad(transform.gameObject);
-            
-            }
-        
 
+        DontDestroyOnLoad(transform.gameObject);
+        timer = new Stopwatch();
+        isRunning = timer.IsRunning;
+
+    }
+    public void startNewTimer()
+    {
+        timer.Reset();
+        timer.Start();
+    }
+        
+    public void startTimer()
+    {
+        timer.Start();
+    }
+
+    public void pauseTimer()
+    {
+        if (timer.IsRunning)
+        {
+            timer.Stop();
+        }
+    }
 
 
     public void playLevel()

@@ -1099,9 +1099,9 @@ MonoBehaviour:
   dialogue:
     sentences:
     - 'YOU: Oh crap... what is happening?'
-    - 'FBI: THIS IS WHAT HAPPENS WHEN YOU TAKE THE TARTAUS'
-    - 'YOU: I think the Volcano is active now.'
-    - 'FBI: YOU''RE ON YOUR OWN KID'
+    - 'L.O.R.E Agent: HAVE YOU NEVER SEEN A MOVIE!'
+    - 'L.O.R.E Agent: NEVER TOUCH THE TREASURE!'
+    - 'L.O.R.E Agent: YOU''RE ON YOUR OWN KID'
   treasure: {fileID: 1043571499}
 --- !u!4 &399810470
 Transform:
@@ -1175,8 +1175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'FBI: I FINALLY CAUGHT UP TO YOU'
-    - 'FBI: STOP RIGHT THERE, DON''T TOUCH THAT'
+    - 'L.O.R.E Agent: I FINALLY CAUGHT UP TO YOU'
+    - 'L.O.R.E Agent: STOP RIGHT THERE, DON''T TOUCH THAT'
     - 'YOU: Can''t stop me! This treasure is mine!'
   treasure: {fileID: 1043571499}
 --- !u!4 &548763402

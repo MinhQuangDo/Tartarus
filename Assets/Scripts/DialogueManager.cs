@@ -36,6 +36,12 @@ public class DialogueManager : MonoBehaviour
         dBox.SetActive(true);
         sentences.Clear();
 
+        GameObject obj = GameObject.FindGameObjectWithTag("Music");
+        if (obj != null)
+        {
+            obj.GetComponent<MusicBox>().pauseTimer();
+        }
+
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);

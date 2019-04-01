@@ -41,6 +41,15 @@ public class SceneLoader : MonoBehaviour
         }
     }
     
+    public void restartTimer()
+    {
+        GameObject obj = GameObject.FindGameObjectWithTag("Music");
+        if (obj != null)
+        {
+            obj.GetComponent<MusicBox>().startNewTimer();
+        }
+    }
+
     // UI and buttons
     public void MainMenu()
     {

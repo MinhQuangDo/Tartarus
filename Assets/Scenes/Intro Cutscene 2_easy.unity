@@ -253,7 +253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161159614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.75, y: -14.58, z: 3.171875}
+  m_LocalPosition: {x: -8.07, y: -11.95, z: 3.171875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -331,9 +331,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'YOU: So this is the supposed Tartarus'
-    - 'YOU: They say that there is lost treasure in here.'
-    - 'YOU: I wonder....'
+    - 'YOU: I heard them talking about a lost treasure'
+    - 'YOU: They called it Tartarus.'
+    - 'YOU: I wonder if its in here...'
 --- !u!1 &293016813
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,10 +809,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'FBI: HEY YOU GET AWAY FROM THERE'
-    - 'YOU: What??'
-    - 'FBI: THIS IS A RESTRICTED AREA, PUT YOU HANDS UP'
-    - 'YOU: NEVER!!'
+    - 'L.O.R.E Agent: HEY YOU GET AWAY FROM THERE'
+    - 'YOU: What?'
+    - 'L.O.R.E Agent: THIS IS A RESTRICTED AREA, PUT YOU HANDS UP'
+    - 'YOU: NEVER!'
 --- !u!4 &548763402
 Transform:
   m_ObjectHideFlags: 0

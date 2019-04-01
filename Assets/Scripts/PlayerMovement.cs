@@ -57,6 +57,12 @@ public class PlayerMovement : MonoBehaviour
         {
             applyBoots();
         }
+        // Start the timer
+        GameObject obj = GameObject.FindGameObjectWithTag("Music");
+        if (obj != null)
+        {
+            obj.GetComponent<MusicBox>().startTimer();
+        }
     }
 
     void Update()
